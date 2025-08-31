@@ -1,0 +1,195 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Part 1: Transitions --- */
+#hoverBtn {
+  background: linear-gradient(45deg, #4CAF50, #81C784);
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+}
+
+#hoverBtn:hover {
+  background: linear-gradient(45deg, #388E3C, #66BB6A);
+  transform: scale(1.15);
+  box-shadow: 0 6px 12px rgba(56, 142, 60, 0.6);
+}
+
+/* The animated box */
+#animatedBox {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #2196F3, #21CBF3);
+  margin: 30px auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(33, 203, 243, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+/* --- Part 1: Keyframe Animation --- */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-60px); }
+  100% { transform: translateY(0); }
+}
+
+.bounce {
+  animation: bounce 0.8s ease;
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    box-shadow: 0 8px 15px rgba(33, 203, 243, 0.5);
+    background: linear-gradient(135deg, #2196F3, #21CBF3);
+  }
+  50% {
+    box-shadow: 0 12px 25px rgba(33, 203, 243, 0.8);
+    background: linear-gradient(135deg, #64B5F6, #4FC3F7);
+  }
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+}
+
+.custom-calc {
+  margin-top: 20px;
+}
+
+.custom-calc label {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.custom-calc input {
+  padding: 8px;
+  margin-right: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.custom-calc input:focus {
+  outline: none;
+  border-color: #2196F3;
+}
+
+.custom-calc button {
+  background: linear-gradient(45deg, #FF5722, #FF9800);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(255, 87, 34, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.custom-calc button:hover {
+  background: linear-gradient(45deg, #E64A19, #F57C00);
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  #hoverBtn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  #animatedBox {
+    width: 100px;
+    height: 100px;
+  }
+  section {
+    padding: 15px;
+  }
+  .custom-calc input {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hoverBtn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.1rem;
+  }
+  #animatedBox {
+    width: 80px;
+    height: 80px;
+  }
+  .custom-calc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .custom-calc label {
+    margin-bottom: 5px;
+  }
+  .custom-calc input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .custom-calc button {
+    width: 100%;
+  }
+}
